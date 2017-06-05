@@ -1,5 +1,6 @@
 const Twitter = require('twitter');
-
+const _ = require('lodash');
+const async = require('neo-async');
 const config = require('./conf/credential');
 
 console.error("hello--", config);
@@ -8,12 +9,25 @@ console.error("hello--", config);
 const client = new Twitter(config);
 
 const params = {
-  user_id: 'pupjnky'
+  screen_name: 'YOUR_ACCOUNT'
 };
 
-client.get('statuses/user_timeline', params, (error, tweets, response) => {
-  if (error) {
-    console.error(error);
+let tweetsCount;
+async.series([
+  (next) => {
+    client.get('users/show', params, (err, userStatus, response) => {
+      if (err) {
+        console.error(err);
+        return next(err);
+      }
+      console.error("----tweets", userStatus);
+      tweetsCount = userStatus && userStatus.statuses_count;
+      return next();
+    });
+  },
+  (next) => {
+    next();
   }
-  console.log(tweets);
+], (err) => {
+  console.error('------err', err)
 });

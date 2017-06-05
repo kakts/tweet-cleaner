@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "twitter": "^1.7.0"
+    "lodash": "^4.17.4",
+    "neo-async": "^2.2.0",
+    "twitter": "^1.6.0"
   }
 }
