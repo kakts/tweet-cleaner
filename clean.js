@@ -8,7 +8,7 @@ const csv = require('csvtojson');
 const client = new Twitter(config);
 
 // Please set you latest date what you want to delete.
-// This script delete user tweets as descending-date-order
+// This script delete user tweets in descending date order.
 // It can delete max 3200 tweets one time.
 const finalDate = "2017-04-01";
 const finalTimestamp = Date.parse(finalDate);
