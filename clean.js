@@ -7,8 +7,6 @@ const csv = require('csvtojson');
 // Create twitter client instance.
 const client = new Twitter(config);
 
-const screenName = 'pupjnky';
-
 // Please set you latest date what you want to delete.
 // This script delete user tweets as descending-date-order
 // It can delete max 3200 tweets one time.
