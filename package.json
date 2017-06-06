@@ -1,5 +1,13 @@
 {
+  "name": "node-tweet-cleaner",
+  "author": "kakts <kakts.git@gmail.com>",
+  "bugs": "https://github.com/kakts/tweet-cleaner/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kakts/tweet-cleaner.git"
+  },
   "dependencies": {
+    "csvtojson": "^1.1.6",
     "lodash": "^4.17.4",
     "neo-async": "^2.2.0",
     "twitter": "^1.6.0"
